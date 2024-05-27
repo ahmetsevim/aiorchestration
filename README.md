@@ -2,8 +2,8 @@
 1. Fork this repository (optional) and clone it locally.
 
 ```
-git clone 
-cd 
+git clone https://github.com/ahmetsevim/aiorchestration.git
+cd aiorchestration
 ```
 
 2. Create a virtualenv and activate it.
