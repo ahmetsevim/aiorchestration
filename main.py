@@ -11,12 +11,15 @@ async def on_chat_start():
     
     await cl.Message(content="Hello there, I am Groq. How can I help you ?").send()
 
+    with open('superAgentPromptBehaviorTree.txt', 'r') as file:
+        super_agent_prompt_content = file.read()
+
     model = ChatGroq(temperature=0,model_name="llama3-70b-8192")
     prompt = ChatPromptTemplate.from_messages(
         [
             (
                 "system",
-                "You're a very knowledgeable Machine Learning Engineer.",
+                super_agent_prompt_content,
             ),
             ("human", "{question}"),
         ]
